@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Javascript Clock</title>
+
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/all.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+  </head>
+  <body class="text-center">
+    <div class="container">
+      <div class="row">
+        <div class="col" id="themeDiv">
+          <span
+            class="active d-inline-block"
+            id="dayTheme"
+            onclick="toggleTheme(this.id)"
+            ><i class="fas fa-sun"></i> Day</span
+          >
+          <span
+            id="nightTheme"
+            class="d-inline-block"
+            onclick="toggleTheme(this.id)"
+            ><i class="fas fa-moon"></i> Night</span
+          >
+        </div>
+      </div>
+      <div class="wrapper">
+        <div class="active" id="timerContainer">
+          <div class="row">
+            <div class="col">
+              <input class="bg-transparent"
+                type="text"
+                name="initHours"
+                id="initHours"
+                value="00"
+                onchange="checkInput(this)"
+              />
+              :
+              <input class="bg-transparent"
+                type="text"
+                name="initMinutes"
+                id="initMinutes"
+                value="00"
+                onchange="checkInput(this)"
+              />
+              :
+              <input class="bg-transparent"
+                type="text"
+                name="initSeconds"
+                id="initSeconds"
+                value="00"
+                onchange="checkInput(this)"
+              />
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <div id="timer">
+                <div class="dial"><span id="hours">00</span></div>
+                <span>:</span>
+                <div class="dial">
+                  <span id="minutes">00</span>
+                </div>
+                <span>:</span>
+                <div class="dial">
+                  <span id="seconds">00</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <button onclick="startTimer()" class="bg-transparent" id="startBtn">Start</button>
+              <button onclick="resetTimer()" class="bg-transparent" id="resetBtn">Reset</button>
+            </div>
+          </div>
+        </div>
+        <div class="deactive" id="clockContainer">
+          <div class="row">
+            <div class="col">
+              <select id="timezone" onchange="changeTimezone(this)"
+                ><option value="ind">IND</option
+                ><option value="chi">CHINA</option
+                ><option value="ita">ITALY</option></select
+              >
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <div id="timer">
+                <div class="dial"><span id="clockHours">00</span></div>
+                <span>:</span>
+                <div class="dial">
+                  <span id="clockMinutes">00</span>
+                </div>
+                <span>:</span>
+                <div class="dial">
+                  <span id="clockSeconds">00</span>
+                </div>
+                <span class="d-block small" id="meridie">AM</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <button onclick="toggleApp('timer', 'clock')" class="border-0 bg-transparent timer-btn active">Timer</button>
+          <span class="timer-seeker" id="seeker"></span>
+          <button onclick="toggleApp('clock', 'timer')" class="border-0 bg-transparent clock-btn">Clock</button>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script type="text/javascript" src="js/script.js"></script>
+</html>

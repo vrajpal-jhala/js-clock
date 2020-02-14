@@ -1,0 +1,233 @@
+:root {
+  --bg-day: rgb(248, 248, 248);
+  --bg-night: rgb(32, 32, 32);
+  --color-day: rgb(44, 44, 44);
+  --color-night: rgb(150, 150, 150);
+  --shadow-day: rgb(224, 224, 224);
+  --shadow-night: black;
+  --border-day: rgb(224, 224, 224);
+  --border-night: black;
+}
+
+body.night {
+  background-color: var(--bg-night);
+  color: var(--color-night);
+}
+
+body {
+  color: var(--color-day);
+  background-color: var(--bg-day);
+  transition: all 0.3s ease-out;
+}
+
+input:focus,
+button:focus,
+select:focus {
+  outline: none;
+}
+
+[class*="seeker"]{
+  display: block;
+  height: 60px;
+  width: 110px;
+  border-radius: 10px;
+  box-shadow: inset 0px 0px 8px #bababa;
+  position: absolute;
+  z-index: -1;
+  top: 9%;
+  transition: all 0.6s ease;
+}
+
+[class*="seeker"].night{
+  box-shadow: inset 0px 0px 8px black;
+}
+
+.timer-seeker {
+  right: 51.05%;
+}
+
+.clock-seeker {
+  right: 39.4%;
+}
+
+button.active {
+  transform: scale(1.3);
+}
+
+.row {
+  padding: 40px 0px;
+}
+
+.wrapper {
+  overflow: hidden;
+}
+
+#timerContainer.active {
+  position: relative;
+  top: 0%;
+  transition: all 0.6s ease;
+}
+
+#timerContainer.deactive {
+  position: relative;
+  top: -100%;
+  transition: all 0.6s ease;
+}
+
+#clockContainer.active {
+  position: relative;
+  top: -100%;
+  transition: all 0.6s ease;
+}
+
+#clockContainer.deactive {
+  position: relative;
+  top: 0%;
+  transition: all 0.6s ease;
+}
+
+.dial {
+  padding: 15px 20px;
+  display: inline-block;
+  border-radius: 10%;
+  box-shadow: 5px 5px 5px var(--shadow-day);
+}
+
+.dial.night {
+  box-shadow: 5px 5px 5px var(--shadow-night);
+}
+
+input {
+  width: 50px;
+  text-align: center;
+  padding: 10px;
+  background-color: var(--bg-day);
+  border: 2px solid var(--border-day);
+  border-width: 0px 2px 2px 0px;
+}
+
+input.night {
+  border-color: var(--border-night);
+  background-color: var(--bg-night);
+  color: var(--color-night);
+  border-width: 0px 2px 2px 0px;
+}
+
+button {
+  padding: 10px;
+  margin: 15px;
+  border: 2px solid var(--border-day);
+  border-width: 0px 2px 2px 0px;
+  width: 100px;
+  transition: all 0.6s ease 0.3s;
+}
+
+button.night {
+  border-color: var(--border-night);
+  background-color: var(--bg-night);
+  color: var(--color-night);
+}
+
+#themeDiv > span {
+  padding: 15px 20px;
+  margin: 10px;
+  cursor: pointer;
+  box-shadow: 2px 2px 6px var(--shadow-day);
+}
+
+#themeDiv > span.night {
+  box-shadow: 3px 3px 6px var(--shadow-night);
+}
+
+#themeDiv > span.night > .fa-sun {
+  color: yellow;
+}
+
+#themeDiv > span > .fa-moon {
+  color: blue;
+}
+
+#themeDiv > span.night > .fa-moon {
+  color: white;
+}
+
+#themeDiv > span.active {
+  box-shadow: inset 0px 0px 6px var(--shadow-day);
+}
+
+#themeDiv > span.night.active {
+  box-shadow: inset 2px 2px 6px var(--shadow-night);
+}
+
+select {
+  padding: 10px 20px;
+  border-width: 0px 2px 2px 0px;
+  border-color: var(--border-day);
+  background-color: var(--bg-day);
+}
+
+select.night {
+  border-color: var(--border-night);
+  background-color: var(--bg-night);
+  color: rgb(150, 150, 150);
+}
+
+@media (min-width: 320px) {
+  #timer {
+    font-size: 30px;
+  }
+
+  .wrapper {
+    height: 410px;
+  }
+}
+
+@media (min-width: 414px) {
+  #timer {
+    font-size: 50px;
+  }
+
+  .wrapper {
+    height: 440px;
+  }
+}
+
+@media (min-width: 544px) {
+  #timer {
+    font-size: 70px;
+  }
+
+  .wrapper {
+    height: 480px;
+  }
+}
+
+@media (min-width: 768px) {
+  #timer {
+    font-size: 80px;
+  }
+
+  .wrapper {
+    height: 510px;
+  }
+}
+
+@media (min-width: 992px) {
+  #timer {
+    font-size: 90px;
+  }
+
+  .wrapper {
+    height: 520px;
+  }
+}
+
+@media (min-width: 1200px) {
+  #timer {
+    font-size: 100px;
+  }
+
+  .wrapper {
+    height: 540px;
+  }
+}
